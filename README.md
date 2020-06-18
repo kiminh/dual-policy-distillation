@@ -25,8 +25,8 @@ python baselines/dpd_ppo/main.py --env HalfCheetah-v2  --num-timesteps 20000000 
 ```
 
 
-## DPD\_DDPG
-
+## Hyperparameters
+1. DPD\_DDPG
 ```
 usage: main.py [-h] [--env-id ENV_ID] [--render-eval] [--no-render-eval]
                [--layer-norm] [--no-layer-norm] [--render] [--no-render]
@@ -47,8 +47,7 @@ usage: main.py [-h] [--env-id ENV_ID] [--render-eval] [--no-render-eval]
                [--no-evaluation] [--log_dir LOG_DIR]
 ```
 
-## DPD\_PPO
-
+2. DPD\_PPO
 ```
 usage: main.py [-h] [--env-id ENV_ID] [--seed SEED]
                [--num-timesteps NUM_TIMESTEPS] [--play] [--log-dir LOG_DIR]
