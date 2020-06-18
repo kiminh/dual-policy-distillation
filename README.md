@@ -1,4 +1,3 @@
-
 # Dual Policy Distillation 
 
 ## Installation
@@ -54,3 +53,13 @@ usage: main.py [-h] [--env-id ENV_ID] [--seed SEED]
                [--exp-scale EXP_SCALE]
 ```
 
+## Cite this work
+If you find this repo useful, you may cite:
+```bibtex
+@article{lai2020dual,
+  title={Dual Policy Distillation},
+  author={Lai, Kwei-Herng and Zha, Daochen and Li, Yuening and Hu, Xia},
+  journal={arXiv preprint arXiv:2006.04061},
+  year={2020}
+}
+```
