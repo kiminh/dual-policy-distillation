@@ -11,6 +11,7 @@ setup(name='baselines',
                 if package.startswith('baselines')],
       install_requires=[
           'gym[mujoco,atari,classic_control,robotics]==0.15.3',
+          'pandas'
           'scipy',
           'tqdm',
           'joblib',
