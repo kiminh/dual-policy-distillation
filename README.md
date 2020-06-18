@@ -2,8 +2,10 @@
 # Dual Policy Distillation 
 
 ## Installation
-Make sure that you have **Python 3.5+** and **pip** installed:
+Make sure that you have **Mujoco** and **mujoco-py** installed:
+Please follow the [instruction] (https://github.com/openai/mujoco-py/blob/master/README.md) to install the mujoco and mujoco-py
 
+Make sure that you have **Python 3.5+** and **pip** installed:
 ```
 git clone https://github.com/datamllab/dual-policy-distillation.git
 pip install -r requirements.txt
