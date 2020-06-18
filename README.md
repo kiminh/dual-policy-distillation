@@ -9,8 +9,9 @@ git clone https://github.com/datamllab/dual-policy-distillation.git
 pip install -r requirements.txt
 pip install -e .
 	
+```
 
-## DPD_DDPG
+## DPD\_DDPG
 
 ```
 usage: main.py [-h] [--env-id ENV_ID] [--render-eval] [--no-render-eval]
@@ -30,4 +31,12 @@ usage: main.py [-h] [--env-id ENV_ID] [--render-eval] [--no-render-eval]
                [--nb-rollout-steps NB_ROLLOUT_STEPS] [--noise-type NOISE_TYPE]
                [--num-timesteps NUM_TIMESTEPS] [--evaluation]
                [--no-evaluation] [--log_dir LOG_DIR]
+```
 
+## DPD\_PPO
+
+```
+usage: main.py [-h] [--env-id ENV_ID] [--seed SEED]
+               [--num-timesteps NUM_TIMESTEPS] [--play] [--log-dir LOG_DIR]
+               [--exp-scale EXP_SCALE]
+```
