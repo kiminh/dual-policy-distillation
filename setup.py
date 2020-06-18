@@ -9,21 +9,6 @@ if sys.version_info.major != 3:
 setup(name='baselines',
       packages=[package for package in find_packages()
                 if package.startswith('baselines')],
-      install_requires=[
-          'gym[mujoco,atari,classic_control,robotics]==0.15.3',
-          'pandas'
-          'scipy',
-          'tqdm',
-          'joblib',
-          'zmq',
-          'dill',
-          'progressbar2',
-          'mpi4py',
-          'cloudpickle',
-          'tensorflow==1.15.0',
-          'click',
-          'opencv-python'
-      ],
       description='OpenAI baselines: high quality implementations of reinforcement learning algorithms',
       author='OpenAI',
       url='https://github.com/openai/baselines',

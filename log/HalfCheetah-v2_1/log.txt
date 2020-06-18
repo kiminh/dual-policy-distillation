@@ -1,0 +1,33 @@
+Logging to ./log/HalfCheetah-v2_1
+-------------------------------------
+| agent              | agent_0      |
+| approxkl           | 0.001570869  |
+| clipfrac           | 0.008496094  |
+| eplenmean          | 1e+03        |
+| eprewmean          | -576         |
+| explained_variance | -0.625       |
+| fps                | 618          |
+| nupdates           | 1            |
+| policy_entropy     | 8.503118     |
+| policy_loss        | -0.008993738 |
+| serial_timesteps   | 2048         |
+| time_elapsed       | 4.49         |
+| total_timesteps    | 2048         |
+| value_loss         | 0.39998454   |
+-------------------------------------
+-------------------------------------
+| agent              | agent_1      |
+| approxkl           | 0.0012741706 |
+| clipfrac           | 0.005078125  |
+| eplenmean          | 1e+03        |
+| eprewmean          | -649         |
+| explained_variance | -1.46        |
+| fps                | 668          |
+| nupdates           | 1            |
+| policy_entropy     | 8.511492     |
+| policy_loss        | -0.008065363 |
+| serial_timesteps   | 2048         |
+| time_elapsed       | 6.37         |
+| total_timesteps    | 2048         |
+| value_loss         | 0.54021484   |
+-------------------------------------

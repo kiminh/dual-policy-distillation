@@ -1,4 +1,6 @@
-gym[atari,classic_control,mujoco,robotics]==0.15.3
+gym[mujoco,atari,classic_control,robotics]==0.15.3
+seaborn
+pandas
 scipy
 tqdm
 joblib
@@ -6,7 +8,7 @@ zmq
 dill
 progressbar2
 mpi4py
-cloudpickle
+cloudpickle==1.2.0
 tensorflow==1.15.0
 click
 opencv-python

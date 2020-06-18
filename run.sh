@@ -15,7 +15,7 @@ do
 	do
 		for env in $envs
 		do
-			tsp python baselines/dil/main.py --env-id $env --num-timesteps 5000000 --seed $seed --log_dir ./log/$alg/${seed}_${env} --nb-epochs 2500 --dis-batch-size 64 --actor-dis-lr 1e-4 --exp-scale 0.75
+			tsp python baselines/$alg/main.py --env-id $env --num-timesteps 5000000 --seed $seed --log_dir ./log/$alg/${seed}_${env} --nb-epochs 2500 --dis-batch-size 64 --actor-dis-lr 1e-4 --exp-scale 0.75
 		done
 	done
 done
