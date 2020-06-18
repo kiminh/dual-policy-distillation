@@ -2,12 +2,10 @@
 # Dual Policy Distillation 
 
 ## Installation
-Make sure that you have **Mujoco** and **mujoco-py** installed:
-```
-Please follow the [instructions](https://github.com/openai/mujoco-py/blob/master/README.md) to install the mujoco and mujoco-py
-```
+1. Please follow the [instructions](https://github.com/openai/mujoco-py/blob/master/README.md) to install the mujoco and mujoco-py
 
-Make sure that you have **Python 3.5+** and **pip** installed:
+
+2. Make sure that you have **Python 3.5+** and **pip** installed:
 ```
 git clone https://github.com/datamllab/dual-policy-distillation.git
 pip install -r requirements.txt
@@ -16,12 +14,12 @@ pip install -e .
 ```
 
 ## Example
-DPD\_DDPG
+1. DPD\_DDPG
 ```
 python baselines/dpd_ddpg/main.py --env-id HalfCheetah-v2 --num-timesteps 5000000  --nb-epochs 2500 --dis-batch-size 64 --actor-dis-lr 1e-4 --exp-scale 0.75
 ```
 
-DPD\_PPO
+2. DPD\_PPO
 ```
 python baselines/dpd_ppo/main.py --env HalfCheetah-v2  --num-timesteps 20000000 --exp-scale 0.5
 ```
