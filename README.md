@@ -1,4 +1,6 @@
 # Dual Policy Distillation 
+This is the repository for experiment code of dual policy distillation (IJCAI'20).
+Please see our [paper](https://arxiv.org/abs/2006.04061) for more details.
 
 ## Installation
 1. Please follow the [instructions](https://github.com/openai/mujoco-py/blob/master/README.md) to install the mujoco and mujoco-py
@@ -53,8 +55,7 @@ usage: main.py [-h] [--env-id ENV_ID] [--seed SEED]
                [--exp-scale EXP_SCALE]
 ```
 
-## Cite this work
-If you find this repo useful, you may cite:
+## Citation
 ```bibtex
 @article{lai2020dual,
   title={Dual Policy Distillation},
