@@ -1,1 +1,3 @@
-Use run.sh to run
+#Installation
+	pip install -e .	
+	
