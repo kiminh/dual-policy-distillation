@@ -1,0 +1,12 @@
+gym[atari,classic_control,mujoco,robotics]==0.15.3
+scipy
+tqdm
+joblib
+zmq
+dill
+progressbar2
+mpi4py
+cloudpickle
+tensorflow==1.15.0
+click
+opencv-python

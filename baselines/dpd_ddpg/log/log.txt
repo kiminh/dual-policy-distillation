@@ -1,0 +1,118 @@
+Logging to ./log
+rank 0: seed=0, logdir=./log
+scaling actions by [1. 1. 1. 1. 1. 1.] before executing in env
+setting up param noise
+  param_noise_actor_0/dense/kernel:0 <- actor_0/dense/kernel:0 + noise
+  param_noise_actor_0/dense/bias:0 <- actor_0/dense/bias:0 + noise
+  param_noise_actor_0/LayerNorm/beta:0 <- actor_0/LayerNorm/beta:0
+  param_noise_actor_0/LayerNorm/gamma:0 <- actor_0/LayerNorm/gamma:0
+  param_noise_actor_0/dense_1/kernel:0 <- actor_0/dense_1/kernel:0 + noise
+  param_noise_actor_0/dense_1/bias:0 <- actor_0/dense_1/bias:0 + noise
+  param_noise_actor_0/LayerNorm_1/beta:0 <- actor_0/LayerNorm_1/beta:0
+  param_noise_actor_0/LayerNorm_1/gamma:0 <- actor_0/LayerNorm_1/gamma:0
+  param_noise_actor_0/dense_2/kernel:0 <- actor_0/dense_2/kernel:0 + noise
+  param_noise_actor_0/dense_2/bias:0 <- actor_0/dense_2/bias:0 + noise
+  adaptive_param_noise_actor_0/dense/kernel:0 <- actor_0/dense/kernel:0 + noise
+  adaptive_param_noise_actor_0/dense/bias:0 <- actor_0/dense/bias:0 + noise
+  adaptive_param_noise_actor_0/LayerNorm/beta:0 <- actor_0/LayerNorm/beta:0
+  adaptive_param_noise_actor_0/LayerNorm/gamma:0 <- actor_0/LayerNorm/gamma:0
+  adaptive_param_noise_actor_0/dense_1/kernel:0 <- actor_0/dense_1/kernel:0 + noise
+  adaptive_param_noise_actor_0/dense_1/bias:0 <- actor_0/dense_1/bias:0 + noise
+  adaptive_param_noise_actor_0/LayerNorm_1/beta:0 <- actor_0/LayerNorm_1/beta:0
+  adaptive_param_noise_actor_0/LayerNorm_1/gamma:0 <- actor_0/LayerNorm_1/gamma:0
+  adaptive_param_noise_actor_0/dense_2/kernel:0 <- actor_0/dense_2/kernel:0 + noise
+  adaptive_param_noise_actor_0/dense_2/bias:0 <- actor_0/dense_2/bias:0 + noise
+setting up actor optimizer
+  actor shapes: [[17, 64], [64], [64], [64], [64, 64], [64], [64], [64], [64, 6], [6]]
+  actor params: 5958
+setting up actor distillation  optimizer
+setting up critic optimizer
+  regularizing: critic_0/dense/kernel:0
+  regularizing: critic_0/dense_1/kernel:0
+  regularizing: critic_0/dense_2/kernel:0
+  applying l2 regularization with 0.01
+  critic shapes: [[17, 64], [64], [64], [64], [70, 64], [64], [64], [64], [64, 1], [1]]
+  critic params: 6017
+setting up target updates ...
+  target_actor_0/dense/kernel:0 <- actor_0/dense/kernel:0
+  target_actor_0/dense/bias:0 <- actor_0/dense/bias:0
+  target_actor_0/LayerNorm/beta:0 <- actor_0/LayerNorm/beta:0
+  target_actor_0/LayerNorm/gamma:0 <- actor_0/LayerNorm/gamma:0
+  target_actor_0/dense_1/kernel:0 <- actor_0/dense_1/kernel:0
+  target_actor_0/dense_1/bias:0 <- actor_0/dense_1/bias:0
+  target_actor_0/LayerNorm_1/beta:0 <- actor_0/LayerNorm_1/beta:0
+  target_actor_0/LayerNorm_1/gamma:0 <- actor_0/LayerNorm_1/gamma:0
+  target_actor_0/dense_2/kernel:0 <- actor_0/dense_2/kernel:0
+  target_actor_0/dense_2/bias:0 <- actor_0/dense_2/bias:0
+setting up target updates ...
+  target_critic_0/dense/kernel:0 <- critic_0/dense/kernel:0
+  target_critic_0/dense/bias:0 <- critic_0/dense/bias:0
+  target_critic_0/LayerNorm/beta:0 <- critic_0/LayerNorm/beta:0
+  target_critic_0/LayerNorm/gamma:0 <- critic_0/LayerNorm/gamma:0
+  target_critic_0/dense_1/kernel:0 <- critic_0/dense_1/kernel:0
+  target_critic_0/dense_1/bias:0 <- critic_0/dense_1/bias:0
+  target_critic_0/LayerNorm_1/beta:0 <- critic_0/LayerNorm_1/beta:0
+  target_critic_0/LayerNorm_1/gamma:0 <- critic_0/LayerNorm_1/gamma:0
+  target_critic_0/dense_2/kernel:0 <- critic_0/dense_2/kernel:0
+  target_critic_0/dense_2/bias:0 <- critic_0/dense_2/bias:0
+Using agent with the following configuration:
+dict_items([('clip_norm', None), ('rewards', <tf.Tensor 'rewards_0:0' shape=(?, 1) dtype=float32>), ('memory', <baselines.dil.memory.Memory object at 0x7faec9bba240>), ('obs_rms', <baselines.common.mpi_running_mean_std.RunningMeanStd object at 0x7faec9bbac18>), ('weights', <tf.Tensor 'truediv_2:0' shape=(?, 1) dtype=float32>), ('actor_dis_loss', <tf.Tensor 'Sum_1:0' shape=() dtype=float32>), ('obs0', <tf.Tensor 'obs0_0:0' shape=(?, 17) dtype=float32>), ('param_noise', AdaptiveParamNoiseSpec(initial_stddev=0.2, desired_action_stddev=0.2, adoption_coefficient=1.01)), ('actor_dis_grads', <tf.Tensor 'concat_2:0' shape=(5958,) dtype=float32>), ('target_actor', <baselines.dil.models.Actor object at 0x7faec9bba630>), ('actor_dis_lr', 0.0001), ('target_soft_updates', [<tf.Operation 'group_deps_6' type=NoOp>, <tf.Operation 'group_deps_8' type=NoOp>]), ('actions', <tf.Tensor 'actions_0:0' shape=(?, 6) dtype=float32>), ('normalize_observations', True), ('target_critic', <baselines.dil.models.Critic object at 0x7faec9bd14e0>), ('actor_optimizer', <baselines.common.mpi_adam.MpiAdam object at 0x7faeb06e1390>), ('critic_loss', <tf.Tensor 'add_13:0' shape=() dtype=float32>), ('stats_ops', [<tf.Tensor 'Mean_4:0' shape=() dtype=float32>, <tf.Tensor 'Mean_5:0' shape=() dtype=float32>, <tf.Tensor 'Mean_6:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_1:0' shape=() dtype=float32>, <tf.Tensor 'Mean_9:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_2:0' shape=() dtype=float32>, <tf.Tensor 'Mean_12:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_3:0' shape=() dtype=float32>, <tf.Tensor 'Mean_15:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_4:0' shape=() dtype=float32>]), ('stats_names', ['obs_rms_mean', 'obs_rms_std', 'reference_Q_mean', 'reference_Q_std', 'reference_actor_Q_mean', 'reference_actor_Q_std', 'reference_action_mean', 'reference_action_std', 'reference_perturbed_action_mean', 'reference_perturbed_action_std']), ('target_Q', <tf.Tensor 'add:0' shape=(?, 1) dtype=float32>), ('dis_qs', <tf.Tensor 'dis_qs_0:0' shape=(?, 1) dtype=float32>), ('dis_actions', <tf.Tensor 'dis_actions_0:0' shape=(?, 6) dtype=float32>), ('perturb_adaptive_policy_ops', <tf.Operation 'group_deps_1' type=NoOp>), ('critic_tf', <tf.Tensor 'clip_by_value_2:0' shape=(?, 1) dtype=float32>), ('observation_range', (-5.0, 5.0)), ('actor_grads', <tf.Tensor 'concat:0' shape=(5958,) dtype=float32>), ('critic_grads', <tf.Tensor 'concat_4:0' shape=(6017,) dtype=float32>), ('EXP_SCALE', <tf.Tensor 'Placeholder:0' shape=() dtype=float32>), ('tau', 0.01), ('actor_tf', <tf.Tensor 'actor_0/Tanh:0' shape=(?, 6) dtype=float32>), ('actor_loss', <tf.Tensor 'Neg:0' shape=() dtype=float32>), ('critic_lr', 0.001), ('exp_scale', 1), ('obs1', <tf.Tensor 'obs1_0:0' shape=(?, 17) dtype=float32>), ('batch_size', 64), ('critic_l2_reg', 0.01), ('ret_rms', None), ('actor', <baselines.dil.models.Actor object at 0x7faec9bba1d0>), ('terminals1', <tf.Tensor 'terminals1_0:0' shape=(?, 1) dtype=float32>), ('enable_popart', False), ('gamma', 0.99), ('perturbed_actor_tf', <tf.Tensor 'param_noise_actor_0/Tanh:0' shape=(?, 6) dtype=float32>), ('critic', <baselines.dil.models.Critic object at 0x7faec9bba208>), ('reward_scale', 1.0), ('stats_sample', None), ('actor_dis_optimizer', <baselines.common.mpi_adam.MpiAdam object at 0x7faeb060a7f0>), ('action_noise', None), ('target_init_updates', [<tf.Operation 'group_deps_5' type=NoOp>, <tf.Operation 'group_deps_7' type=NoOp>]), ('normalized_critic_with_actor_tf', <tf.Tensor 'critic_0_1/dense_2/BiasAdd:0' shape=(?, 1) dtype=float32>), ('critic_with_actor_tf', <tf.Tensor 'clip_by_value_3:0' shape=(?, 1) dtype=float32>), ('critic_optimizer', <baselines.common.mpi_adam.MpiAdam object at 0x7faeb0390e10>), ('perturb_policy_ops', <tf.Operation 'group_deps' type=NoOp>), ('critic_target', <tf.Tensor 'critic_target_0:0' shape=(?, 1) dtype=float32>), ('prefix', '0'), ('normalized_critic_tf', <tf.Tensor 'critic_0/dense_2/BiasAdd:0' shape=(?, 1) dtype=float32>), ('return_range', (-inf, inf)), ('param_noise_stddev', <tf.Tensor 'param_noise_stddev_0:0' shape=() dtype=float32>), ('actor_lr', 0.0001), ('normalize_returns', False), ('action_range', (-1.0, 1.0)), ('adaptive_policy_distance', <tf.Tensor 'Sqrt:0' shape=() dtype=float32>), ('dis_batch_size', 512)])
+scaling actions by [1. 1. 1. 1. 1. 1.] before executing in env
+setting up param noise
+  param_noise_actor_1/dense/kernel:0 <- actor_1/dense/kernel:0 + noise
+  param_noise_actor_1/dense/bias:0 <- actor_1/dense/bias:0 + noise
+  param_noise_actor_1/LayerNorm/beta:0 <- actor_1/LayerNorm/beta:0
+  param_noise_actor_1/LayerNorm/gamma:0 <- actor_1/LayerNorm/gamma:0
+  param_noise_actor_1/dense_1/kernel:0 <- actor_1/dense_1/kernel:0 + noise
+  param_noise_actor_1/dense_1/bias:0 <- actor_1/dense_1/bias:0 + noise
+  param_noise_actor_1/LayerNorm_1/beta:0 <- actor_1/LayerNorm_1/beta:0
+  param_noise_actor_1/LayerNorm_1/gamma:0 <- actor_1/LayerNorm_1/gamma:0
+  param_noise_actor_1/dense_2/kernel:0 <- actor_1/dense_2/kernel:0 + noise
+  param_noise_actor_1/dense_2/bias:0 <- actor_1/dense_2/bias:0 + noise
+  adaptive_param_noise_actor_1/dense/kernel:0 <- actor_1/dense/kernel:0 + noise
+  adaptive_param_noise_actor_1/dense/bias:0 <- actor_1/dense/bias:0 + noise
+  adaptive_param_noise_actor_1/LayerNorm/beta:0 <- actor_1/LayerNorm/beta:0
+  adaptive_param_noise_actor_1/LayerNorm/gamma:0 <- actor_1/LayerNorm/gamma:0
+  adaptive_param_noise_actor_1/dense_1/kernel:0 <- actor_1/dense_1/kernel:0 + noise
+  adaptive_param_noise_actor_1/dense_1/bias:0 <- actor_1/dense_1/bias:0 + noise
+  adaptive_param_noise_actor_1/LayerNorm_1/beta:0 <- actor_1/LayerNorm_1/beta:0
+  adaptive_param_noise_actor_1/LayerNorm_1/gamma:0 <- actor_1/LayerNorm_1/gamma:0
+  adaptive_param_noise_actor_1/dense_2/kernel:0 <- actor_1/dense_2/kernel:0 + noise
+  adaptive_param_noise_actor_1/dense_2/bias:0 <- actor_1/dense_2/bias:0 + noise
+setting up actor optimizer
+  actor shapes: [[17, 64], [64], [64], [64], [64, 64], [64], [64], [64], [64, 6], [6]]
+  actor params: 5958
+setting up actor distillation  optimizer
+setting up critic optimizer
+  regularizing: critic_1/dense/kernel:0
+  regularizing: critic_1/dense_1/kernel:0
+  regularizing: critic_1/dense_2/kernel:0
+  applying l2 regularization with 0.01
+  critic shapes: [[17, 64], [64], [64], [64], [70, 64], [64], [64], [64], [64, 1], [1]]
+  critic params: 6017
+setting up target updates ...
+  target_actor_1/dense/kernel:0 <- actor_1/dense/kernel:0
+  target_actor_1/dense/bias:0 <- actor_1/dense/bias:0
+  target_actor_1/LayerNorm/beta:0 <- actor_1/LayerNorm/beta:0
+  target_actor_1/LayerNorm/gamma:0 <- actor_1/LayerNorm/gamma:0
+  target_actor_1/dense_1/kernel:0 <- actor_1/dense_1/kernel:0
+  target_actor_1/dense_1/bias:0 <- actor_1/dense_1/bias:0
+  target_actor_1/LayerNorm_1/beta:0 <- actor_1/LayerNorm_1/beta:0
+  target_actor_1/LayerNorm_1/gamma:0 <- actor_1/LayerNorm_1/gamma:0
+  target_actor_1/dense_2/kernel:0 <- actor_1/dense_2/kernel:0
+  target_actor_1/dense_2/bias:0 <- actor_1/dense_2/bias:0
+setting up target updates ...
+  target_critic_1/dense/kernel:0 <- critic_1/dense/kernel:0
+  target_critic_1/dense/bias:0 <- critic_1/dense/bias:0
+  target_critic_1/LayerNorm/beta:0 <- critic_1/LayerNorm/beta:0
+  target_critic_1/LayerNorm/gamma:0 <- critic_1/LayerNorm/gamma:0
+  target_critic_1/dense_1/kernel:0 <- critic_1/dense_1/kernel:0
+  target_critic_1/dense_1/bias:0 <- critic_1/dense_1/bias:0
+  target_critic_1/LayerNorm_1/beta:0 <- critic_1/LayerNorm_1/beta:0
+  target_critic_1/LayerNorm_1/gamma:0 <- critic_1/LayerNorm_1/gamma:0
+  target_critic_1/dense_2/kernel:0 <- critic_1/dense_2/kernel:0
+  target_critic_1/dense_2/bias:0 <- critic_1/dense_2/bias:0
+Using agent with the following configuration:
+dict_items([('clip_norm', None), ('rewards', <tf.Tensor 'rewards_1:0' shape=(?, 1) dtype=float32>), ('memory', <baselines.dil.memory.Memory object at 0x7faeb027d9e8>), ('obs_rms', <baselines.common.mpi_running_mean_std.RunningMeanStd object at 0x7faeb027ddd8>), ('weights', <tf.Tensor 'truediv_5:0' shape=(?, 1) dtype=float32>), ('actor_dis_loss', <tf.Tensor 'Sum_3:0' shape=() dtype=float32>), ('obs0', <tf.Tensor 'obs0_1:0' shape=(?, 17) dtype=float32>), ('param_noise', AdaptiveParamNoiseSpec(initial_stddev=0.2, desired_action_stddev=0.2, adoption_coefficient=1.01)), ('actor_dis_grads', <tf.Tensor 'concat_8:0' shape=(5958,) dtype=float32>), ('target_actor', <baselines.dil.models.Actor object at 0x7faeb0286668>), ('actor_dis_lr', 0.0001), ('target_soft_updates', [<tf.Operation 'group_deps_15' type=NoOp>, <tf.Operation 'group_deps_17' type=NoOp>]), ('actions', <tf.Tensor 'actions_1:0' shape=(?, 6) dtype=float32>), ('normalize_observations', True), ('target_critic', <baselines.dil.models.Critic object at 0x7faeb0286dd8>), ('actor_optimizer', <baselines.common.mpi_adam.MpiAdam object at 0x7fae8c1686d8>), ('critic_loss', <tf.Tensor 'add_47:0' shape=() dtype=float32>), ('stats_ops', [<tf.Tensor 'Mean_22:0' shape=() dtype=float32>, <tf.Tensor 'Mean_23:0' shape=() dtype=float32>, <tf.Tensor 'Mean_24:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_6:0' shape=() dtype=float32>, <tf.Tensor 'Mean_27:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_7:0' shape=() dtype=float32>, <tf.Tensor 'Mean_30:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_8:0' shape=() dtype=float32>, <tf.Tensor 'Mean_33:0' shape=() dtype=float32>, <tf.Tensor 'Sqrt_9:0' shape=() dtype=float32>]), ('stats_names', ['obs_rms_mean', 'obs_rms_std', 'reference_Q_mean', 'reference_Q_std', 'reference_actor_Q_mean', 'reference_actor_Q_std', 'reference_action_mean', 'reference_action_std', 'reference_perturbed_action_mean', 'reference_perturbed_action_std']), ('target_Q', <tf.Tensor 'add_34:0' shape=(?, 1) dtype=float32>), ('dis_qs', <tf.Tensor 'dis_qs_1:0' shape=(?, 1) dtype=float32>), ('dis_actions', <tf.Tensor 'dis_actions_1:0' shape=(?, 6) dtype=float32>), ('perturb_adaptive_policy_ops', <tf.Operation 'group_deps_10' type=NoOp>), ('critic_tf', <tf.Tensor 'clip_by_value_8:0' shape=(?, 1) dtype=float32>), ('observation_range', (-5.0, 5.0)), ('actor_grads', <tf.Tensor 'concat_6:0' shape=(5958,) dtype=float32>), ('critic_grads', <tf.Tensor 'concat_10:0' shape=(6017,) dtype=float32>), ('EXP_SCALE', <tf.Tensor 'Placeholder_4:0' shape=() dtype=float32>), ('tau', 0.01), ('actor_tf', <tf.Tensor 'actor_1/Tanh:0' shape=(?, 6) dtype=float32>), ('actor_loss', <tf.Tensor 'Neg_1:0' shape=() dtype=float32>), ('critic_lr', 0.001), ('exp_scale', 1), ('obs1', <tf.Tensor 'obs1_1:0' shape=(?, 17) dtype=float32>), ('batch_size', 64), ('critic_l2_reg', 0.01), ('ret_rms', None), ('actor', <baselines.dil.models.Actor object at 0x7faeb027db00>), ('terminals1', <tf.Tensor 'terminals1_1:0' shape=(?, 1) dtype=float32>), ('enable_popart', False), ('gamma', 0.99), ('perturbed_actor_tf', <tf.Tensor 'param_noise_actor_1/Tanh:0' shape=(?, 6) dtype=float32>), ('critic', <baselines.dil.models.Critic object at 0x7faeb027db70>), ('reward_scale', 1.0), ('stats_sample', None), ('actor_dis_optimizer', <baselines.common.mpi_adam.MpiAdam object at 0x7fae8c03db70>), ('action_noise', None), ('target_init_updates', [<tf.Operation 'group_deps_14' type=NoOp>, <tf.Operation 'group_deps_16' type=NoOp>]), ('normalized_critic_with_actor_tf', <tf.Tensor 'critic_1_1/dense_2/BiasAdd:0' shape=(?, 1) dtype=float32>), ('critic_with_actor_tf', <tf.Tensor 'clip_by_value_9:0' shape=(?, 1) dtype=float32>), ('critic_optimizer', <baselines.common.mpi_adam.MpiAdam object at 0x7fae846b4a58>), ('perturb_policy_ops', <tf.Operation 'group_deps_9' type=NoOp>), ('critic_target', <tf.Tensor 'critic_target_1:0' shape=(?, 1) dtype=float32>), ('prefix', '1'), ('normalized_critic_tf', <tf.Tensor 'critic_1/dense_2/BiasAdd:0' shape=(?, 1) dtype=float32>), ('return_range', (-inf, inf)), ('param_noise_stddev', <tf.Tensor 'param_noise_stddev_1:0' shape=() dtype=float32>), ('actor_lr', 0.0001), ('normalize_returns', False), ('action_range', (-1.0, 1.0)), ('adaptive_policy_distance', <tf.Tensor 'Sqrt_5:0' shape=() dtype=float32>), ('dis_batch_size', 512)])
+##### Epoch 0, timesteps: 0 #####
+> Learner 0
