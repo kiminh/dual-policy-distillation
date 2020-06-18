@@ -11,6 +11,11 @@ pip install -e .
 	
 ```
 
+## Example
+```
+python baselines/dpd_ddpg/main.py --env-id HalfCheetah-v2 --num-timesteps 5000000  --nb-epochs 2500 --dis-batch-size 64 --actor-dis-lr 1e-4 --exp-scale 0.75
+```
+
 ## DPD\_DDPG
 
 ```
@@ -40,3 +45,4 @@ usage: main.py [-h] [--env-id ENV_ID] [--seed SEED]
                [--num-timesteps NUM_TIMESTEPS] [--play] [--log-dir LOG_DIR]
                [--exp-scale EXP_SCALE]
 ```
+
